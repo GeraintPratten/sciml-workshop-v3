@@ -1,1 +1,1 @@
-/var/training-materials/SciML
+/mnt/materials/SciML/sciml-workshop/
