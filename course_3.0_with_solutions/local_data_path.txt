@@ -1,1 +1,1 @@
-./sciml-workshop-data/
+/var/training-materials/SciML
