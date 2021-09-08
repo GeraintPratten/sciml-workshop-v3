@@ -18,6 +18,17 @@ Practical notebooks for the SciML workshop
    * To download the notebook to your computer: File → Download .ipynb
    * To save a copy in your Google Drive: File → Save a copy in Drive
 
+## SCD Cloud
+### Directions for setup
+
+* Go to SCD Cloud's JupyterHub [https://training.jupyter.stfc.ac.uk](https://training.jupyter.stfc.ac.uk)
+* Click on the "sign-up"
+* Enter your supplied username (scimlXX) and a password of your choice.
+* Click "Create User"
+* Login with your username and password
+* On the server options page choose "SciML GPU environment"
+* Click "Start"
+* Wait a minute or two for your environment to load.
 
 ## Authors
 Jaehoon Cha<sup>1</sup>, Susmita Basak<sup>1</sup>, Keith Butler<sup>1</sup>, Kuangdai Leng<sup>1</sup>, Sam Jackson<sup>1</sup>, Jeyan Thiyagalingam<sup>1</sup>
