@@ -32,5 +32,5 @@ Practical notebooks for the SciML workshop
 
 ## Authors
 Keith Butler, Kuangdai Leng, Sam Jackson, Jaehoon Cha, Susmita Basak, Jeyan Thiyagalingam
-Scientific Machine Learning (SciML) Group, Scientific Computing Department, Science and Technology Facilities Council* 
+*Scientific Machine Learning (SciML) Group, Scientific Computing Department, Science and Technology Facilities Council* 
 
