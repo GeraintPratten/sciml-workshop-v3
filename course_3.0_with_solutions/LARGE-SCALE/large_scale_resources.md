@@ -78,6 +78,14 @@ singularity shell tensorflow_latest-gpu.sif
 singularity run tensorflow_latest-gpu.sif
 ```
 
+For example, if we want to run some python code using the tensorflow image we can run:
+
+```bash
+singularity exec tensorflow_latest-gpu.sif python train_fmnist.py
+```
+
+Which will start training a FMNIST classification model.
+
 ### Building Containers
 There are many, many prepackaged images out there, but what do we do if we want to make our own image? We can use Singularity build scripts to specify how to create an new image. For information on build scripts can be found in the [Singularity docs](https://sylabs.io/guides/3.6/user-guide/quick_start.html#build-images-from-scratch).
 
