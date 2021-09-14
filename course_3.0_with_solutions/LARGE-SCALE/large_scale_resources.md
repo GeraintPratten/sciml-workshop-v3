@@ -2,9 +2,9 @@
 
 ## Accessing PEARL
 
-You will receive three files:
- - `tmpXXX.ppk` is the private key file for ssh if you are on a Windows machine. 
+You will receive three files: 
  - `tmpXXX` is the private key file for ssh if you are on a Mac or Linux machine.
+ - `tmpXXX.ppk` is the private key file for ssh if you are on a Windows machine using Putty.
  - `passphrase.txt` is the password for your ssh private key which you will need to enter when prompted.
  
 
@@ -24,7 +24,7 @@ Assuming your username is `tmp100` and that your key file is called `tmp100` you
 You'll need to change the permissions of the key to enable it to work correctly on unix. To change this you can simply run:
 
 ```bash
-chmod 700 tmp100
+chmod 600 tmp100
 ```
 
 Once you have changed permissions. You can ssh as normal:
@@ -34,7 +34,7 @@ ssh -i tmp100 tmp100@ui.pearl.scd.stfc.ac.uk
 ```
 When you are prompted for the password, you will need to enter the phrase in the `passphrase.txt` text file.
 
-Your temporary accounts will close automatically on Wednesday 23rd of September. If you wish to apply for a permanent account you can sign up [here](https://www.turing.ac.uk/research/asg/pearl).
+Your temporary accounts will close automatically on Wednesday 29th of September. If you wish to apply for a permanent account you can sign up [here](https://www.turing.ac.uk/research/asg/pearl).
 
 ## Viewing Files
 PEARL currently only provides a command line interface. To open and edit files in this tutorial you will need to use a command line text editor. Both `vim` and `nano` are installed on the system. A vim tutorial can be found [here](https://vim.fandom.com/wiki/Tutorial).
@@ -138,10 +138,10 @@ squeue –u pearl008
 We can run an interactive shell with the following command. This will allocate a single GPU resource on the PEARL system and provide a bash prompt. Note that the `--reservation=Diamond2020` is only required during the workshop.
 
 ```bash
-srun --gres=gpu:1 --reservation=Diamond2020 --pty bash 
+srun --gres=gpu:1 --reservation=scimlWorkshop --pty bash 
 ```
 
-An example of a very basic batch script. Each of the `#SBATCH` lines set an option in SLURM. Again, as above, the `--reservation=Diamond2020` is only required during the workshop. Each of the options are as follows:
+An example of a very basic batch script. Each of the `#SBATCH` lines set an option in SLURM. Again, as above, the `--reservation=scimlWorkshop` is only required during the workshop. Each of the options are as follows:
 
  - `gres`: set the generic resources for this job. Here we're specifying we want one GPU.
  - `job-name`: set the display name of the job. This will be visible in the public queue.
@@ -150,7 +150,7 @@ An example of a very basic batch script. Each of the `#SBATCH` lines set an opti
 
 ```bash
 #!/bin/bash
-#SBATCH --reservation=Diamond2020
+#SBATCH --reservation=scimlWorkshop
 #SBATCH --gres=gpu:1
 #SBATCH --job-name ="ML Job"
 #SBATCH --time=0-00:10:00
@@ -168,7 +168,7 @@ You can run any arbitrary bash command in your job script. For example, we can r
 
 ```bash
 #!/bin/bash
-#SBATCH --reservation=Diamond2020
+#SBATCH --reservation=scimlWorkshop
 #SBATCH --gres=gpu:1
 singularity exec --nv tensorflow_latest-gpu.sif nvidia-smi
 ```
